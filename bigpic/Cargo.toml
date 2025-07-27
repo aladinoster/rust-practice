@@ -4,3 +4,15 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+
+[[bin]]
+name = "sum"
+path = "src/sum.rs"
+
+[[bin]]
+name = "sum_base"
+path = "src/sum_base.rs"
+
+[[bin]]
+name = "sum_oop"
+path = "src/sum_oop.rs"
