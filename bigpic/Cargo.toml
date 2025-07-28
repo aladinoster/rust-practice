@@ -16,3 +16,11 @@ path = "src/sum_base.rs"
 [[bin]]
 name = "sum_oop"
 path = "src/sum_oop.rs"
+
+[[bin]]
+name = "sum_oop_borrow"
+path = "src/sum_oop_borrow.rs"
+
+[[bin]]
+name = "try_borrow"
+path = "src/try_borrow.rs"
