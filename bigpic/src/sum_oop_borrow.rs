@@ -51,4 +51,21 @@ fn main() {
     let result = Accumulator::combine(acc1, acc2);
 
     println!("accs= {}", result.get());
+
+    let mut evens_acc = Accumulator::new(0);
+    let mut odds_acc = Accumulator::new(0);
+
+    for n in 3..10 {
+        if n % 2 == 0 {
+            evens_acc.add(n);
+        } else {
+            odds_acc.add(n);
+        }
+    }
+
+    // Atention here: you define a new accumulator based on the former ones in this case
+    // not borrowing but instead transfering ownership
+    let acctot = Accumulator::combine(evens_acc, odds_acc);
+    println!("acct = {}", acctot.get());
+    //println!("even_acc {}", evens_acc.get());// will fail because evens_acc is moved
 }
