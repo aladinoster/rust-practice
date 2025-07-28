@@ -15,11 +15,22 @@ impl Accumulator {
     fn new(sum: i32) -> Self {
         Self { sum }
     }
+    //immutable borrow -> lends the reference (like lend a book ), can read not modify
     fn get(&self) -> i32 {
         self.sum
     }
+    //mutable borrow -> lends the reference (like lend a board), one can write at time
     fn add(&mut self, increment: i32) {
         self.sum += increment;
+    }
+    //move -> performs a copy of the elements (transfers ownership)
+    /*
+    fn combine(acc1: Accumulator, acc2: Accumulator) -> Accumulator {
+        Accumulator::new(acc1.sum + acc2.sum)
+    }
+    */
+    fn combine(acc1: Self, acc2: Self) -> Self {
+        Self::new(acc1.sum + acc2.sum)
     }
 }
 
@@ -33,4 +44,11 @@ fn main() {
 
     println!("acc = {:?}", acc);
     println!("acc = {}", acc.get());
+
+    let acc1 = Accumulator::new(1);
+    let acc2 = Accumulator::new(2);
+
+    let result = Accumulator::combine(acc1, acc2);
+
+    println!("accs= {}", result.get());
 }
