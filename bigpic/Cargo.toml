@@ -24,3 +24,7 @@ path = "src/sum_oop_borrow.rs"
 [[bin]]
 name = "try_borrow"
 path = "src/try_borrow.rs"
+
+[[bin]]
+name = "sum_concurrent"
+path = "src/sum_concurrent.rs"
